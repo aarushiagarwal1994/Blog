@@ -1,0 +1,21 @@
+<div>
+  	<p class="article_text"><%= comment.commenter %>:-</p>
+		<pre style="width:400px"><%= comment.body %></pre>
+
+	<table class="table table-striped" style="width:400px" >           
+    <tbody>
+			<tr>
+     		<td style="width:10px"><%= button_to 'LIKE', like_article_comment_path(@article, comment), :method=>:get , :data => {:disable_with => "LIKE"}%></td>
+     		<td><%= comment.like %></td>
+   			<td style="width:15px"><%= button_to 'DISLIKE', dislike_article_comment_path(@article, comment), :method=>:get , :data => {:disable_with => "DISLIKE"}%></td>
+   			<td style="width:50px"><%= comment.dislike %></td>
+    		<td><%= social_share_button_tag("MY BLOGS", :popup => "true", 'data-facebook-title' => 'TheTitleForTwitter') %><h6>Share on Twitter/FaceBook</h6></td>
+				
+   		</tr>
+  	</tbody>
+   </table>
+</div>
+
+
+
+

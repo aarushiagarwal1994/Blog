@@ -1,0 +1,7 @@
+class LikdisInComments < ActiveRecord::Migration
+  def change
+  change_column :comments, :like, :integer, :default => 0
+  change_column :comments, :dislike, :integer, :default => 0 
+  Comments.where( like: 'NULL' ).update_all( like: 0 )
+  end
+end

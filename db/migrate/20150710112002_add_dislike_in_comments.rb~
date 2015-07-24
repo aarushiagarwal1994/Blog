@@ -1,0 +1,4 @@
+class AddDislikeInComments < ActiveRecord::Migration
+  def change
+  end
+end

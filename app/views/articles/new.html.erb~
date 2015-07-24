@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="container-fluid list_container">
+<p class="sub-header">New Article</p>
+<%= render 'form' %>
+<%= link_to 'Back', articles_path %>
+</div>
+</div>

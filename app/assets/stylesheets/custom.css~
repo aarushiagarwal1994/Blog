@@ -1,0 +1,133 @@
+body{ 
+  margin:0;
+  padding:0;
+  background-color:White;
+  padding-top: 262px; 
+}
+
+th{
+  text-align:center;
+  font-size:20px;
+}
+
+.middle{
+  width:100%;
+  height: 600 px;
+}
+
+.middle_container{
+  background: url('/assets/writing-prompts-4.jpg'); 
+  width:100%; 
+  padding:0px;
+  opacity:0.9;
+}
+
+.middle_text{
+  font-weight: bold ;
+  font-style: italic;
+  font-family: 'Times New Roman';
+  font-size: 30px;
+  color:#000000;
+  text-align:center;
+}
+
+.copy{
+  font-weight: bold ;
+  font-style: italic;
+  font-family: 'Times New Roman';
+  font-size: 15px;
+  color:#000000;
+  text-align:center;
+  padding:10px;
+  margin-bottom:-10px;
+  background-color:#EFEFEF;
+}
+.start{
+  font-style: italic;
+  font-family: 'Times New Roman';
+  font-size: 35px;
+  color:#E4E4E4;
+  text-align:center;
+}
+
+.navbar {
+  margin:20px 0px;
+  width:100%;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #EEE;
+  font-style: italic;
+  font-family: 'Times New Roman';
+  font-size: 45px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.list_container{
+  padding: 20px;
+  background-color: #F0F0F0;
+  margin-bottom: 20px;
+}
+
+.list_container1{
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.nav.navbar-nav{
+  float: none;
+  margin: 0px auto;
+  width: 600px;
+}
+
+.error{
+  font-family: 'Times New Roman';
+  font-size: 25px;
+  text-align:justify;
+}
+
+.error_container{
+  padding: 0px 20px 0px 20px;
+  background-color: #F0F0F0;
+  margin-bottom: 20px;
+}
+
+.article_head{
+  font-style: italic;
+  font-family: 'Times New Roman';
+  font-size: 25px;
+  text-align:justify;
+}
+
+.text{
+  width:1000px;
+  height: 400px;
+  
+}
+.title{
+  width:1000px;
+  font-style: italic;
+  font-family: 'Times New Roman';
+  font-size: 23px;
+}
+
+.wrap{  
+  width:800px;
+  overflow: hidden;
+}
+
+.article_text{
+  font-family: 'Times New Roman';
+  font-size: 20px;
+  text-align:justify;
+  word-break: keep-all;
+}
+
+.box{
+  width: 200px; 
+  border: 1px solid #000000;
+}
+
+

@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  	        <table class="table table-striped table-hover" >
+              <thead>
+                <tr>
+                  <th>TITLE</th>
+                  <th>ARTICLE</th>
+                </tr> 
+              </thead>
+              <tbody>
+								<% @articles.each do |article| %>
+                <tr>
+     						 <td><%= truncate(article.title, :length => 20) %></td>
+     						 <td class="wrap"><%= truncate(article.text, :length => 120) %></td>
+   						   <td><%= link_to 'SHOW', article_path(article) %></td>
+   						   
+   						 </tr>
+  						<% end %>                
+              </tbody>
+            </table>
+						<%= will_paginate @articles %>
+          </div>

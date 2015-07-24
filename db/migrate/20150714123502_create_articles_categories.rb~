@@ -1,0 +1,9 @@
+class CreateArticlesCategories < ActiveRecord::Migration
+  def change
+    create_table :articles_categories do |t|
+      t.belongs_to :articles, index: true
+      t.belongs_to :categories, index: true
+      t.timestamps null: false
+    end
+  end
+end

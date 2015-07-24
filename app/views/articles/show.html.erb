@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="container-fluid list_container">
+		<p class="article_head"><strong>Title:</strong><br>
+  		<%= @article.title %>
+		</p>
+		<p >
+		<% if @article.image_url != nil %>
+		<%= image_tag @article.image_url(:thumb).to_s if @article.image?  %>
+		<% end %>
+		</p>
+		<p class="article_head "><strong>Article:</strong><br>
+		  <pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
+		</p>
+		
+	
+</div>
+
+		<div class="container-fluid list_container1" style="margin-top:40px">
+			<p class="article_head"><strong>Comments</strong></p>
+			<% @comments = @article.comments.paginate(:page => params[:page], :per_page => 2).order('id DESC') %>
+			<%= render @comments %>
+			<%= will_paginate @comments %>
+			<%= render 'comments/form' %>
+		</div>
+		<%= link_to 'back', articles_path %>
+	</div>
+</div>
+
+
+

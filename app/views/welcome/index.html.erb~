@@ -1,0 +1,30 @@
+<div class="container">
+<div class="container-fluid" style="margin-bottom: 20px">
+	<div class="row">
+		<div class="col-md-12 middle_container">
+			<div class="container-fluid ">
+				<div class="row">  	
+					<div class="col-md-12" style="padding:30px">  	
+						<p class="middle_text">
+							 A good blog exists independently of people reading it.
+							<br>Even if no one read my blog, I'd still write it. Not exactly sure why.Maybe it's something like this -- I would still cook even if I was the only person eating.
+							<br>Some people seem to feel the need to justify blogging, blogging is still alive they say, but it's actually more than alive blogging is a cultural fixture. "Thriving". 
+						</p>					
+					</div>				
+				</div>
+			<div class="row">  	
+					<div class="col-md-8">  	
+						<img src="/assets/welcome6.png" class="img-responsive" width="90%">
+					</div>
+					<div class="col-md-4" style="padding:100px 0px 0px 0px" >
+						<%= link_to controller: 'articles', class:'link_to_button' do %>
+							<span class="btn btn-primary btn-lg start">Start Blogging NOW</span>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+</div>
+
