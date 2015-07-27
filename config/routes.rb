@@ -46,7 +46,8 @@ Rails.application.routes.draw do
    end
  end
 
-  resources :articles do
+
+  resources :articles  do
     resources :comments do
       member do
         get 'like'
@@ -65,6 +66,35 @@ Rails.application.routes.draw do
    get 'commercial'
    end
  end
+
+	namespace :admin do
+	 root :to => "welcome#index"
+  	resources :articles do
+		resources :comments
+	end		 
+ 	resources :categories do
+  		 collection do
+   			get 'fictional'
+			  get 'political'
+			  get 'factual'
+			  get 'social'
+			  get 'technical'
+			  get 'commercial'
+			  end
+		end
+		resources :welcome do
+			 collection do
+			 get 'contact'
+			 get 'content'
+			 get 'terms'
+			 get 'about'
+			 end
+		end
+ end
+
+
+
+
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments

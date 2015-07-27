@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="container-fluid list_container">
+  	<div class="row">
+  	  <div class="col-md-12">
+				<p class="sub-header">All Articles</p>
+        <% if @articles.length==0 %>
+        <p class="article_head" style="text-align:center">Sorry!...There are no Articles to show...
+        </p>
+        <% else %>
+  	      <div class="table-responsive">
+  	        <table class="table table-striped table-hover" >
+              <thead>
+                <tr>
+                  <th>TITLE</th>
+                  <th>ARTICLE</th>
+                </tr> 
+              </thead>
+              <tbody>
+								<% @articles.each do |article| %>
+                <tr>
+     						 <td><%= truncate(article.title, :length => 20) %></td>		
+     						 <td class="wrap" style="width:700px;"><%= truncate(article.text, :length => 100) %></td>
+								 <td><%= link_to 'SHOW', admin_article_path(article) %></td>
+									<% if article.user_id==nil %>				
+									<td><%= link_to 'EDIT', edit_admin_article_path( article) %></td>
+										<% else %>
+									<td class="text-muted"><%= link_to 'EDIT', :disabled=>true %></td> 
+										<% end %>
+    					    <td><%= link_to 'DELETE', admin_article_path(article), method: :delete,
+             					 data: { confirm: 'Are you sure?' } %></td>												 
+   						 </tr>
+  						<% end %>                              
+              </tbody>
+            </table>
+						<%= will_paginate @articles %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+

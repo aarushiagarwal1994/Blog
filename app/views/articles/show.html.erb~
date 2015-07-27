@@ -11,10 +11,11 @@
 		<p class="article_head "><strong>Article:</strong><br>
 		  <pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
 		</p>
-		
+		<% if  user_signed_in? && @article.user_id==current_user.id %>
 		<%= link_to 'Edit Article', edit_article_path(@article) %> | 
 		<%= link_to 'Delete Article',article_path(@article), method: :delete,
              					 data: { confirm: 'Are you sure?' } %>
+    <% end %>
 </div>
 
 		<div class="container-fluid list_container1" style="margin-top:40px">

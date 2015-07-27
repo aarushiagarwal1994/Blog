@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
-http_basic_authenticate_with name: "Aarushi", password: "vinsol", except: [:index, :show]
   
-def index	
-        #@articles = Article.all
-	@articles = Article.paginate( :page => params[:page], :per_page => 5).order('id DESC')
-     
+  def index	
+    #@articles = Article.all
+	  @articles = Article.paginate( :page => params[:page], :per_page => 5).order('id DESC') 
+		@user = current_user	     
   end
  
   def show
@@ -12,16 +11,18 @@ def index
   end
  
   def new
-    @article = Article.new
+		@user = current_user
+    @article = @user.articles.new
   end
  
-  def edit
-    @article = Article.find(params[:id])
+  def edit	
+		@user = current_user 
+    @article = @user.articles.find(params[:id])
   end
  
-  def create
-    @article = Article.new(article_params)
- 
+  def create	
+		 @user = current_user
+		 @article = @user.articles.new(article_params) 
     if @article.save
       redirect_to article_path(@article)
     else
@@ -30,8 +31,8 @@ def index
   end
  
   def update
-    @article = Article.find(params[:id])
- 
+		 @user = current_user
+		 @article = @user.articles.find(params[:id])
     if @article.update(article_params)
       redirect_to @article
     else
@@ -40,7 +41,8 @@ def index
   end
  
   def destroy
-    @article = Article.find(params[:id])
+		@user = current_user
+		@article = @user.articles.find(params[:id])
     @article.destroy 
     redirect_to articles_path
   end

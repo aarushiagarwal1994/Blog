@@ -1,0 +1,43 @@
+<div class="error_container">
+	<%= form_for( [:admin, @article], :html => {:multipart => true} ) do |f| %>
+ 		<% if @article.errors.any? %>
+    	<div id="error_explanation">
+      	<p class="error" >
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      	</p>
+      	<ul>
+        	<% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        	<% end %>
+      	</ul>
+    	</div>
+  	<% end %>
+
+<div class="container-fluid" style="padding:0px 30px">
+	<label>
+  	<%= f.label :title, class:"article_head" %><br>
+   	<%= f.text_field :title, placeholder:"Title", class:"title"%>
+  </label>
+ 	
+  <p>
+    <%= f.label :Article, class:"article_head"  %><br>
+    <%= f.text_area :text, placeholder:"Write Yor Article Here", class:"text" %>
+  </p>
+
+  <p>
+		<%= f.label "Category/Categories", class:"article_head"  %><br>
+		<%= f.collection_select :category_ids,  Category.all, :id, :name, {}, { :multiple => true }%>
+	</p>
+
+	<p>
+		<%= f.label "Upload Image", class:"article_head"  %><br>
+		<%= f.file_field :image, accept: 'image/png, image/gif, image/gpeg' %>
+	</p>
+
+  <p>
+    <%= f.submit :"Save Article" , :data => {:disable_with => "Saving..."},style:"padding:5px"%>
+  </p>
+<% end %>
+</div>
+</div>

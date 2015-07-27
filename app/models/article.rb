@@ -7,4 +7,5 @@ class Article < ActiveRecord::Base
   validates :text, presence: true,
                     length: { minimum: 200 }
   mount_uploader :image, ImageUploader
+belongs_to :user
 end

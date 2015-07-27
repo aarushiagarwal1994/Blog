@@ -1,0 +1,4 @@
+class Admin::WelcomeController <BaseController
+def index
+ end
+end

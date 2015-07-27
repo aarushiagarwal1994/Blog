@@ -1,5 +1,6 @@
 <div class="container-fluid list_container">
 	<div class="article_head">Add a comment:</div>
+	<% if user_signed_in? %>
 	<%= form_for([@article, @article.comments.build]) do |f| %>
   <label>
     <%= f.label :Name, class:"article_head" %><br>
@@ -9,7 +10,12 @@
     <%= f.label :Comment, class:"article_head"  %><br>
     <%= f.text_area :body, placeholder:"Make a Comment", style:"width:300px" %>
   </p>
+	<p>
+		<%= hidden_field_tag 'comment[user_id]', current_user.id %>
+	</p>
   <p>
-    <%= f.submit :Post, :data => {:disable_with => "Saving..."}, style:"padding:5px"%>
+    <%= f.submit :Post, :data => {:disable_with => "Post"}, style:"padding:5px"%>
   </p>
 <% end %>
+<% else %>
+<%= link_to 'Sign In First', new_user_session_path %>

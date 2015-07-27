@@ -114,7 +114,7 @@ th{
 }
 
 .wrap{  
-  width:800px;
+  width:850px;
   overflow: hidden;
 }
 

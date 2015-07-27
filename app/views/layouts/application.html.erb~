@@ -23,16 +23,24 @@
   		  <img src="/assets/app/shape.jpg" alt="Logo" width="100%">
 			</div>	
 
-			<div class="col-md-2" style="padding:50px 10px 10px 0px ">
-  		 <p class="text-muted">
+			<div class="col-md-2" style="padding:20px 10px 10px 0px ">
 				<% if user_signed_in? %>
-				Signed in as <%= current_user.email %>.Not You? <%= button_to 'Sign Out', destroy_user_session_path, :method=>:delete ,:class => "btn btn-primary" %>
+				<div class="text-muted" style="padding:10 0 10 0">
+				Welcome
+				<p style="word-wrap: break-word"><%= current_user.email %></p>
+				</div>
+				<%= button_to 'Sign Out', destroy_user_session_path, :method=>:delete ,:class => "btn btn-primary" %>
 				<% else %>
-        <%= button_to 'Sign Up', new_user_registration_path, :method=>:get, :class => "btn btn-primary" %> OR <%= button_to 'Sign In', new_user_session_path, :method=>:get, :class => "btn btn-primary" %>
-				
-				<% end %> 
-			</div>
-
+				 <div style="padding:10px 10px 10px 50px">  		  
+				<img src="/assets/join_us.png" alt="Logo" width="70%">
+			        </div>
+				<div style="float:left">
+        <%= button_to 'Sign Up', new_user_registration_path, :method=>:get, :class => "btn btn-primary" %>
+				</div>
+				<span style="float:left">&nbsp OR &nbsp</span>
+				<div style="float:left">
+				<%= button_to 'Sign In', new_user_session_path, :method=>:get, :class => "btn btn-primary" %></div>				
+				<% end %>
 		</div>	
 	</div>
 </header>
@@ -40,9 +48,24 @@
   <nav class="navbar navbar-default ">
     <div class="container-fluid">
       <div id="navbar">
-        <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav" style="width:665px">
+        <% else %>
+         <ul class="nav navbar-nav">
+         <% end %>
           <li><a href="/">Home</a></li>
-          <li><%= link_to 'Create New Article', new_article_path %></li>
+          <li>
+						<% if user_signed_in? %>
+						<%= link_to 'Create New Article', new_article_path()%>
+						<% else %>
+						<%= link_to 'Create New Article', new_user_session_path %>	
+						<% end %>
+					</li>
+          <li>
+					<% if user_signed_in? %>
+					<%= link_to 'List My Articles', articles_path(my: true) %></li>
+					<% end %>
+          </li>
           <li><%= link_to 'List All Articles', articles_path %></li>
           <li class="dropdown">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">List Articles Categorywise<span class="caret"></span></a>

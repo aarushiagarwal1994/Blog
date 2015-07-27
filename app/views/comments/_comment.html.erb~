@@ -1,16 +1,21 @@
 <div>
   	<p class="article_text"><%= comment.commenter %>:-</p>
-		<pre style="width:400px"><%= comment.body %></pre>
+		<pre style="width:600px"><%= comment.body %></pre>
 
-	<table class="table table-striped" style="width:400px" >           
+	  <table class="table table-striped" style="width:600px" >           
     <tbody>
 			<tr>
-     		<td style="width:10px"><%= button_to 'LIKE', like_article_comment_path(@article, comment), :method=>:get , :data => {:disable_with => "LIKE"}, :class => "btn"%></td>
+     		<td style="width:10px"><%= button_to 'LIKE', like_article_comment_path(@article, comment), :method=>:get , :data => {:disable_with => "LIKE"}%></td>
      		<td><%= comment.like %></td>
    			<td style="width:15px"><%= button_to 'DISLIKE', dislike_article_comment_path(@article, comment), :method=>:get , :data => {:disable_with => "DISLIKE"}%></td>
-   			<td style="width:50px"><%= comment.dislike %></td>
+   			<td><%= comment.dislike %></td>
     		<td><%= social_share_button_tag("MY BLOGS", :popup => "true", 'data-facebook-title' => 'TheTitleForTwitter') %><h6>Share on Twitter/FaceBook</h6></td>
-				
+				<% if user_signed_in? &&  comment.user_id==current_user.id %>
+				<td><%= link_to 'Edit', edit_article_comment_path(@article, comment) %></td>
+				<% end %>
+				<% if (@article.user_id==current_user.id || comment.user_id==current_user.id) && user_signed_in? %>
+				<td><%= link_to 'Delete Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
    		</tr>
   	</tbody>
    </table>
