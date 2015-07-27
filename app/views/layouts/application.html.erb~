@@ -63,10 +63,10 @@
 					</li>
           <li>
 					<% if user_signed_in? %>
-					<%= link_to 'List My Articles', articles_path(my: true) %></li>
+					<%= link_to 'My Articles', articles_path(my: true) %></li>
 					<% end %>
           </li>
-          <li><%= link_to 'List All Articles', articles_path %></li>
+          <li><%= link_to 'All Articles', articles_path %></li>
           <li class="dropdown">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">List Articles Categorywise<span class="caret"></span></a>
            <ul class="dropdown-menu">
