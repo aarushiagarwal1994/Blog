@@ -16,7 +16,7 @@ th{
 }
 
 .middle_container{
-  background: url('/assets/writing-prompts-4.jpg'); 
+  background: url(<%= asset_path('writing-prompts-4.jpg')%>); 
   width:100%; 
   padding:0px;
   opacity:0.9;

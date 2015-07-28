@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>Lets's Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,12 +15,12 @@
 
 			<div class="col-md-3 " style="padding:40px 20px 40px 20px">
     		<a href="/" class="logo">
-        	<img class="img-responsive center-block" src="/assets/app/logo.png" alt="Logo" width="100%">
+        	<img class="img-responsive center-block" src="<%= asset_path('app/logo.png')%>" alt="Logo" width="100%">
 				</a>
 			</div>
 
 			<div class="col-md-7">
-  		  <img src="/assets/app/shape.jpg" alt="Logo" width="100%">
+  		  <img src="<%= asset_path('app/shape.jpg')%>" alt="Logo" width="100%">
 			</div>	
 
 			<div class="col-md-2" style="padding:20px 10px 10px 0px ">
@@ -32,10 +32,10 @@
 				<%= button_to 'Sign Out', destroy_user_session_path, :method=>:delete ,:class => "btn btn-primary" %>
 				<% else %>
 				 <div style="padding:10px 10px 10px 50px">  		  
-				<img src="/assets/join_us.png" alt="Logo" width="70%">
+				<img src="<%= asset_path('join_us.png')%>" alt="Logo" width="70%">
 			        </div>
 				<div style="float:left">
-        <%= button_to 'Sign In', new_user_session_pathnew_user_registration_path, :method=>:get, :class => "btn btn-primary" %>
+        <%= button_to 'Sign In', new_user_session_path, :method=>:get, :class => "btn btn-primary" %>
 				</div>
 				<span style="float:left">&nbsp OR &nbsp</span>
 				<div style="float:left">
@@ -82,10 +82,10 @@
 
 <footer id="footer" style="background-color:#EFEFEF">
 	<div class="container-fluid">
-		<div class="row" style="background: url('/assets/app/repeat.png')">
+		<div class="row" style="background: url('<%= asset_path('app/repeat.png')%>')">
 			<a href="http://guides.rubyonrails.org/">
 			<div class="col-md-1" style="padding:10px 0px 10px 10px">  		  
-				<img src="/assets/app/logo_rails.png" alt="Logo" height="90px">
+				<img src="<%= asset_path('app/logo_rails.png')%>" alt="Logo" height="90px">
 			</div>
 	
 			<div class="col-md-1" style="padding:10px 0px 0px 0px">
@@ -111,7 +111,7 @@
 			</div>
       
 			<div class="col-md-2 " style="padding:0px">
-  		  <img src="/assets/app/header.jpg" alt="Logo" height="110px" width="100%">
+  		  <img src="<%= asset_path('app/header.jpg')%>" alt="Logo" height="110px" width="100%">
 			</div>
 
 		</div>
