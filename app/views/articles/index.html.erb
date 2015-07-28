@@ -11,7 +11,7 @@
 				<% @articles = @user.articles.paginate( :page => params[:page], :per_page => 5).order('id DESC') %>
 				<% end %>
         <% if @articles.length==0 %>
-        <p class="article_head" style="text-align:center">Sorry!...There are no Articles to show...
+        <p class="article_head" style="text-align:center">Sorry!...There are no Articles here...
         </p>
         <% else %>
   	      <div class="table-responsive">

@@ -2,6 +2,10 @@
   <div class="container-fluid list_container">
 		<p class="sub-header">Editting Article</p>
 		<%= render 'form' %>
+		<% if user_signed_in? %>
+		<%= link_to 'back', articles_path(my: true) %>
+		<% else %>
 		<%= link_to 'back', articles_path %>
+		<% end %>
 	</div>
 </div>

@@ -5,9 +5,9 @@
 	  <table class="table table-striped" style="width:600px" >           
     <tbody>
 			<tr>
-     		<td style="width:10px"><%= button_to 'LIKE',{},:disabled => true %></td>
+     		<td style="width:10px">LIKE</td>
      		<td><%= comment.like %></td>
-   			<td style="width:15px"><%= button_to 'DISLIKE', {}, :disabled => true %></td>
+   			<td style="width:15px">DISLIKE</td>
    			<td><%= comment.dislike %></td>
     		<td><h6>Share on Twitter/FaceBook</h6></td>
         <% if comment.user_id==nil %>

@@ -35,11 +35,11 @@
 				<img src="/assets/join_us.png" alt="Logo" width="70%">
 			        </div>
 				<div style="float:left">
-        <%= button_to 'Sign Up', new_user_registration_path, :method=>:get, :class => "btn btn-primary" %>
+        <%= button_to 'Sign In', new_user_session_pathnew_user_registration_path, :method=>:get, :class => "btn btn-primary" %>
 				</div>
 				<span style="float:left">&nbsp OR &nbsp</span>
 				<div style="float:left">
-				<%= button_to 'Sign In', new_user_session_path, :method=>:get, :class => "btn btn-primary" %></div>				
+				<%= button_to 'Sign Up', new_user_registration_path, :method=>:get, :class => "btn btn-primary" %></div>				
 				<% end %>
 		</div>	
 	</div>
@@ -54,13 +54,7 @@
          <ul class="nav navbar-nav">
          <% end %>
           <li><a href="/">Home</a></li>
-          <li>
-						<% if user_signed_in? %>
-						<%= link_to 'Create New Article', new_article_path()%>
-						<% else %>
-						<%= link_to 'Create New Article', new_user_session_path %>	
-						<% end %>
-					</li>
+          <li><%= link_to 'Create New Article', new_article_path()%></li>
           <li>
 					<% if user_signed_in? %>
 					<%= link_to 'My Articles', articles_path(my: true) %></li>
