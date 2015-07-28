@@ -82,7 +82,7 @@
 
 <footer id="footer" style="background-color:#EFEFEF">
 	<div class="container-fluid">
-		<div class="row" style="background: url('<%= asset_path('app/repeat.png')%>')">
+		<div class="row" style="background: url(<%= asset_path('app/repeat.png')%>)">
 			<a href="http://guides.rubyonrails.org/">
 			<div class="col-md-1" style="padding:10px 0px 10px 10px">  		  
 				<img src="<%= asset_path('app/logo_rails.png')%>" alt="Logo" height="90px">
