@@ -2,7 +2,7 @@ class Admin::ArticlesController < BaseController
   
  def index	
   #@articles = Article.all
-	@articles = Article.paginate( :page => params[:page], :per_page => 5).order('id DESC')
+	@articles = Article.paginate( :page => params[:page], :per_page => 6).order('id DESC')
      
   end
  

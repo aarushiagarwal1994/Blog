@@ -1,4 +1,4 @@
-class Admin::CategoriesController < Admin::BaseController
+class Admin::CategoriesController < BaseController
 def fictional	   
     @cat = Category.find_by(name: 'Fictional')
     @articles = @cat.articles.paginate( :page => params[:page], :per_page => 5).order('id DESC')

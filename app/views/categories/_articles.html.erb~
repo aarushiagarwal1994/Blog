@@ -16,8 +16,7 @@
 									<td class="wrap" ><%= truncate(article.text, :length => 120) %></td>
    						   <td><%= link_to 'SHOW', article_path(article) %></td> 										 
    						 </tr>
-  						<% end %>
-							<% end %>                
+  						<% end %>              
               </tbody>
             </table>
 						<%= will_paginate @articles %>
