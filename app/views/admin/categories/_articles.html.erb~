@@ -11,7 +11,14 @@
       <%= truncate(article.text, :length => 200) %>
 			</p>
 			<p>
-			<%= button_to 'SHOW', article_path(article), class:"btn btn-primary" %>						
+			<div style="float:left"><%= button_to 'SHOW', article_path(article), class:"btn btn-primary" %></div>
+			<% if article.user_id==nil %>				
+			<span style="float:left">&nbsp&nbsp&nbsp</span>
+			<div style="float:left"><%= button_to 'EDIT', edit_admin_article_path( article), class:"btn btn-primary" %></div>	
+			<% end %>
+			<span style="float:left">&nbsp&nbsp&nbsp</span>
+			<div style="float:left"><%= button_to 'DELETE', admin_article_path(article), method: :delete, 
+									data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %></div>					
 			<br><br><br><br>
   		</div>
 			<% end %>						

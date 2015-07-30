@@ -23,10 +23,10 @@
       				<%= truncate(article.text, :length => 200) %>
 							</p>
 							<p>
-							<div style="float:left"><%= button_to 'SHOW', article_path(article), class:"btn btn-primary" %></div>
+							<div style="float:left"><%= button_to 'SHOW', article_path(article),method: :get, class:"btn btn-primary" %></div>
 							<span style="float:left">&nbsp&nbsp&nbsp</span>
 							<% if user_signed_in? && params[:my] %>						
-								<div style="float:left"><%= button_to 'EDIT', edit_article_path( article), class:"btn btn-primary" %></div>
+								<div style="float:left"><%= button_to 'EDIT', edit_article_path( article),method: :get, class:"btn btn-primary" %></div>
 								<span style="float:left">&nbsp&nbsp&nbsp</span>
 								<div style="float:left"><%= button_to 'DELETE', article_path(article), method: :delete, 
 									data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %></div>					 

@@ -11,7 +11,7 @@
       				<%= truncate(article.text, :length => 200) %>
 							</p>
 							<p>
-							<%= button_to 'SHOW', article_path(article), class:"btn btn-primary" %>						
+							<%= button_to 'SHOW', article_path(article),method: :get, class:"btn btn-primary" %>						
 							<br><br><br><br>
   						</div>
 						<% end %>						
