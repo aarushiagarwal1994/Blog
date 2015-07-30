@@ -12,7 +12,7 @@
 		  <pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
 		</p>	
 		<% if  @article.user_id==nil %>
-		<%= link_to 'Edit Article', edit_article_path(@article) %> | 
+		<%= link_to 'Edit Article', edit_admin_article_path(@article) %> | 
 		<% end %>	
 		<%= link_to 'Delete Article',admin_article_path(@article), method: :delete,
              					 data: { confirm: 'Are you sure?' } %>

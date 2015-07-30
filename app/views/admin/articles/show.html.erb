@@ -1,16 +1,12 @@
 <div class="container">
   <div class="container-fluid list_container">
-		<p class="article_head"><strong>Title:</strong><br>
-  		<%= @article.title %>
-		</p>
-		<p >
+		<p class="article_head"><strong><%= @article.title %></strong></p><br>
+		<p>
 		<% if @article.image_url != nil %>
 		<%= image_tag @article.image_url(:thumb).to_s if @article.image?  %>
 		<% end %>
-		</p>
-		<p class="article_head "><strong>Article:</strong><br>
-		  <pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
-		</p>	
+		</p><br>
+		  <pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>	
 		<% if  @article.user_id==nil %>
 		<%= link_to 'Edit Article', edit_admin_article_path(@article) %> | 
 		<% end %>	
