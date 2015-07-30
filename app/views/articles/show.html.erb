@@ -3,9 +3,9 @@
 		<br><p class="article_head"><strong><%= @article.title %></strong></p><br>
 		<p>
 		<% if @article.image_url != nil %>
-		<%= image_tag @article.image_url(:thumb).to_s if @article.image?  %>
+		<%= image_tag @article.image_url(:thumb).to_s if @article.image?  %><br>
 		<% end %>
-		</p><br>	
+		</p>	
 		<pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
 	  <% if  user_signed_in? && @article.user_id==current_user.id %>
 		<%= link_to 'Edit Article', edit_article_path(@article) %> | 
