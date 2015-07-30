@@ -1,17 +1,13 @@
 <div class="container">
   <div class="container-fluid list_container">
-		<p class="article_head"><strong>Title:</strong><br>
-  		<%= @article.title %>
-		</p>
-		<p >
+		<p class="article_head"><strong><%= @article.title %></strong></p><br>
+		<p>
 		<% if @article.image_url != nil %>
 		<%= image_tag @article.image_url(:thumb).to_s if @article.image?  %>
 		<% end %>
-		</p>
-		<p class="article_head "><strong>Article:</strong><br>
-		  <pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
-		</p>
-		<% if  user_signed_in? && @article.user_id==current_user.id %>
+		</p>	
+		<pre class="article_text" style="height:450px"><%= word_wrap(@article.text, line_width:125) %></pre>
+	  <% if  user_signed_in? && @article.user_id==current_user.id %>
 		<%= link_to 'Edit Article', edit_article_path(@article) %> | 
 		<%= link_to 'Delete Article',article_path(@article), method: :delete,
              					 data: { confirm: 'Are you sure?' } %>
